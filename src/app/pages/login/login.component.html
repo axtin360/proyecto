@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <form class="form-signin fadeInDown formContent  shadow">
+        <h1 class="h3 mb-3 fadeIn first">Ingrese al sitio</h1>
+        <mat-form-field appearance="fill" class="fadeIn second mb-2">
+            <mat-label class="text-white">Usuario</mat-label>
+            <input [formControl]="usuarioControl" required matInput placeholder="Usuario">
+            <mat-error>Ingrese Nombre Usuario</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="fadeIn third mb-2">
+            <mat-label class="text-white">Ingrese Contraseña</mat-label>
+            <input [formControl]="passControl" required matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+            <mat-error>Ingrese Contraseña</mat-error>
+        </mat-form-field>
+        <div class="checkbox mb-3 fadeIn third ">
+            <mat-checkbox color="primary">Recuérdame</mat-checkbox>
+        </div>
+        <button mat-raised-button type="submit" class="btn pull-right btn-primary fadeIn fourth" [disabled]="">Ingresar</button>
+
+    </form>
+</div>
