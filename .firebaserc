@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "proyecto-escalab": {
+      "hosting": {
+        "proyecto": [
+          "proyecto-escalab"
+        ]
+      }
+    }
+  }
+}
