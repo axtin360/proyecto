@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DescargasComponent } from './pages/descargas/descargas.component';
 
 
 /* form */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+/* servicios*/
 
 
 /** firebase **/
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from 'src/environments/environment';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 /***************** MATERIAL **************************/
 import {MatInputModule} from '@angular/material/input';
@@ -38,6 +42,10 @@ import { OtramasComponent } from './pages/otramas/otramas.component';
 import { DivisionComponent } from './pages/division/division.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { RegisterComponent } from './pages/register/register.component';
+
+/* Guard*/
+import { LoggedGuard } from './guards/logged.guard';
 
 @NgModule({
   declarations: [
@@ -51,6 +59,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     SolucionComponent,
     OtramasComponent,
     DivisionComponent,
+    DescargasComponent,
+    RegisterComponent,
   ],
   imports: [
     FormsModule,
@@ -72,11 +82,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatToolbarModule,
     MatListModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AngularFirestoreModule
 
 
   ],
-  providers: [],
+  providers: [LoggedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

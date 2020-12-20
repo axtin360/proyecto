@@ -1,5 +1,34 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    color: aliceblue;
+}
+
+.formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    max-width: 450px;
+    position: relative;
+    text-align: center;
+    background: #32383e;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 20px;
+    margin: auto;
+}
+
+.mat-form-field {
+    display: inline !important;
+}
+
 body {
-    /* background-color: #808e95;*/
+    background-color: #303030;
 }
 
 a {
@@ -148,6 +177,12 @@ button {
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
 }
 
+.card-bg-vivi {
+    color: white;
+    background: linear-gradient(60deg, #db26ff, #d400ff);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+}
+
 .card .card-header-warning .card-icon,
 .card .card-header-warning .card-text,
 .card .card.bg-warning {
@@ -223,14 +258,6 @@ button {
     text-align: right;
 }
 
-.card .card-header.card-header-icon i,
-.card .card-header.card-header-text i {
-    width: 33px;
-    height: 33px;
-    text-align: center;
-    line-height: 33px;
-}
-
 
 /* texto*/
 
@@ -265,10 +292,6 @@ button {
     border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
 
-.card-stats .card-header+.card-footer {
-    margin-top: 14px;
-}
-
 .card .card-body+.card-footer,
 .card .card-footer {
     padding: 0;
@@ -279,6 +302,10 @@ button {
     justify-content: space-between;
     -webkit-box-align: center;
     align-items: center;
+}
+
+p.card-category {
+    margin-bottom: 0;
 }
 
 .card .card-body+.card-footer .stats,

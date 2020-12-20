@@ -6,6 +6,7 @@
             <a mat-list-item routerLinkActive [routerLink]="['solucion']">Solucion</a>
             <a mat-list-item routerLinkActive [routerLink]="['otramas']">Otra</a>
             <a mat-list-item routerLinkActive [routerLink]="['division']">Divisiones</a>
+            <a mat-list-item routerLinkActive [routerLink]="['descargas']">Descargas</a>
 
         </mat-nav-list>
     </mat-sidenav>
@@ -16,11 +17,9 @@
       </button>
             <span>Dashboar Angular</span>
             <span class="example-spacer"></span>
-            <button mat-raised-button class="outline"><mat-icon>power_settings_new</mat-icon> Cerrar Sesión</button>
+            <button (click)="logout()" mat-raised-button class="outline" routerLink="login"><mat-icon>power_settings_new</mat-icon> Cerrar Sesión</button>
         </mat-toolbar>
-        <ng-content>
-
-        </ng-content>
+        <ng-content></ng-content>
         <!-- Add Content Here -->
         <app-footer class="footer"></app-footer>
     </mat-sidenav-content>

@@ -25,11 +25,20 @@
             <mat-error>Ingrese Contraseña</mat-error>
         </mat-form-field>
         <div class="checkbox mb-3 fadeIn third ">
-            <mat-checkbox color="primary">Recuérdame</mat-checkbox>
+            <div>
+                <mat-checkbox color="primary">Recuérdame</mat-checkbox>
+            </div>
+            <div>
+                <a routerLink="/registro" class="">
+                            ¿No tienes cuenta?
+                </a>
+                <a routerLink="/sidebar" class="">
+                            ¿sidebar?
+                </a>
+            </div>
         </div>
-        <button mat-raised-button color="primary" type="submit" class="btn pull-right fadeIn fourth" [disabled]="">Ingresar</button>
+        <button routerLink="/sidebar" mat-raised-button color="primary" type="submit" class="btn pull-right fadeIn fourth" [disabled]="loginForm.invalid">Ingresar</button>
 
     </form>
-    <button (click)="logout()" mat-raised-button color="primary" type="submit" class="btn pull-right fadeIn fourth" [disabled]="">Salir</button>
 
 </div>

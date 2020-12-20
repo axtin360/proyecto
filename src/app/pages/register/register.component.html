@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="form-signin fadeInDown formContent shadow">
+        <h1 class="h3 mb-3 fadeIn first">Regístrese</h1>
+        <mat-form-field appearance="fill" class="fadeIn second mb-2">
+            <mat-label class="text-white">Nombre</mat-label>
+            <input class="text-white" formControlName="name" required matInput>
+            <mat-error>Ingrese su nombre </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="fadeIn second mb-2">
+            <mat-label class="text-white">Email</mat-label>
+            <input type="email" required matInput formControlName="email">
+            <mat-error *ngIf="emailControl.hasError('required')">
+                Correo electrónico es <strong>REQUERIDO</strong>
+            </mat-error>
+            <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+                Por favor ingrese un correo válido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="fadeIn third mb-2">
+            <mat-label class="text-white">Ingrese Contraseña</mat-label>
+            <input required matInput [type]="hide ? 'password' : 'text'" formControlName="pass">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+            <mat-error *ngIf="pass.errors.minlength">Ingrese Contraseña con mas de 6 carácteres</mat-error>
+            <mat-error>Ingrese Contraseña</mat-error>
+
+        </mat-form-field>
+        <div class="mb-3 mt-2 fadeIn third">
+            <button mat-raised-button color="primary" type="submit" class="btn mr-5 fadeIn fourth" routerLink='/login'>Volver</button>
+
+            <button mat-raised-button color="primary" type="submit" class="btn ml-5 pull-right fadeIn fourth" [disabled]="">Crear</button>
+
+        </div>
+
+    </form>
+</div>

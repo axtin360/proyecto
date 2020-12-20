@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { LoginService } from '../../services/firebase/login.service';
+ 
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -15,6 +18,17 @@ export class SidebarComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+    private loginService:LoginService) {}
+
+  logout(){
+    this.loginService.logout().then(resp => {
+    console.log('logout ok -->', resp );
+    }).catch(error =>{
+      console.error('logout error -->', error);
+
+    })
+  }
+
 
 }
