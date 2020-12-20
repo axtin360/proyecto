@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { LoginService } from '../../services/firebase/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +19,8 @@ export class DashboardComponent  {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-    private loginService:LoginService) {}
+    private loginService:LoginService,
+    private router: Router) {}
 
   logout(){
     this.loginService.logout().then(resp => {

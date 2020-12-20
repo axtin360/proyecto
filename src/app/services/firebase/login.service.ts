@@ -17,7 +17,7 @@ export class LoginService {
     try {
      const respoAuth = await this.angularFireAuth.auth.signInWithEmailAndPassword(email, pass);
       console.log('respuesta auth -->', respoAuth);
-      this.router.navigate(["sidebar"]);
+      this.router.navigate(["dashboard"]);
       return respoAuth.user.uid;
     } catch (error) {
       console.error('error auth -->', error);
@@ -29,6 +29,8 @@ export class LoginService {
     try {
       const logoutResp = await this.angularFireAuth.auth.signOut();
       console.log('logout exitoso');
+      this.router.navigate(["login"]);
+
       return logoutResp;
     } catch (error) {
       console.log('logout error -->', error);

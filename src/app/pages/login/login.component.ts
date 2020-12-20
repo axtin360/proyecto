@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.pass).then(resp => {
       //console.log('resp promise campo ts -->', resp);
       
-      this.router.navigate(["sidebar"]);
+      this.router.navigate(["dashboard"]);
     }).catch(error => {
       console.error('promise -->', error);
     });

@@ -10,19 +10,21 @@ import { DivisionComponent } from './pages/division/division.component';
 import { DescargasComponent } from './pages/descargas/descargas.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoggedGuard } from './guards/logged.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
 
 
 const routes: Routes = [
  
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegisterComponent},
-  {path:'**', redirectTo:'login', pathMatch:'full'},
-  {path:'', redirectTo:'login', pathMatch:'full'},
-  { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule),canActivate: [LoggedGuard] },
+ { path: 'dashboard', loadChildren: ('./pages/dashboard/dashboard.module#DashboardModule'),canActivate:[LoggedGuard]},
+ {path:'', redirectTo:'login', pathMatch:'full'},
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
