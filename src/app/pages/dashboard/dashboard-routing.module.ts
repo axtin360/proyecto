@@ -12,12 +12,12 @@ import { LoginComponent } from '../login/login.component';
 
 const routes: Routes = [
   {path:'', component: DashboardComponent, children:[
-  {path:'', component:VidaComponent},
-  {path:'vida', component: VidaComponent},
-  {path:'solucion', component:SolucionComponent},
-  {path:'division', component:DivisionComponent},
-  {path:'otramas', component:OtramasComponent},
-  {path:'descargas', component:DescargasComponent}
+  {path:'', loadChildren: '../vida/vida.module#VidaModule'},
+  {path:'vida', loadChildren: '../vida/vida.module#VidaModule'},
+  {path:'solucion', loadChildren: '../solucion/solucion.module#SolucionModule'},
+  {path:'division', loadChildren: '../division/division.module#DivisionModule'},
+  {path:'otramas', loadChildren: '../otramas/otramas.module#OtramasModule'},
+  {path:'descargas', loadChildren: '../descargas/descargas.module#DescargasModule'},
 ]},
 
 

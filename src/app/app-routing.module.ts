@@ -18,7 +18,7 @@ const routes: Routes = [
  
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegisterComponent},
- { path: 'dashboard', loadChildren: ('./pages/dashboard/dashboard.module#DashboardModule'),canActivate:[LoggedGuard]},
+  {path: 'dashboard', loadChildren: ('./pages/dashboard/dashboard.module#DashboardModule'),canActivate:[LoggedGuard]},
  {path:'', redirectTo:'login', pathMatch:'full'},
 
 ];

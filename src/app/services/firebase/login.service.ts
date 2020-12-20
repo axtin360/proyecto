@@ -16,13 +16,14 @@ export class LoginService {
   async login(email: string, pass: string){
     try {
      const respoAuth = await this.angularFireAuth.auth.signInWithEmailAndPassword(email, pass);
-      console.log('respuesta auth -->', respoAuth);
-      this.router.navigate(["dashboard"]);
+     this.router.navigate(["dashboard"]); 
+     console.log('respuesta auth -->', respoAuth);
       return respoAuth.user.uid;
     } catch (error) {
       console.error('error auth -->', error);
       
     }
+    this.router.navigate(['dashboard'])
   }
 
   async logout(){

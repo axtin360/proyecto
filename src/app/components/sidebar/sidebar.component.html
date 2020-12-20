@@ -3,7 +3,7 @@
         <mat-toolbar class="justify-content-center mt-3" color="primary"><img class="logo" src="/assets/img/angular2-logo-red.png"></mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLinkActive [routerLink]="['vida']">Vida</a>
-            <a mat-list-item routerLinkActive [routerLink]="['solucion']">Solucion</a>
+            <a mat-list-item routerLinkActive [routerLink]="['solucion']">Solución</a>
             <a mat-list-item routerLinkActive [routerLink]="['otramas']">Otra</a>
             <a mat-list-item routerLinkActive [routerLink]="['division']">Divisiones</a>
             <a mat-list-item routerLinkActive [routerLink]="['descargas']">Descargas</a>
@@ -17,7 +17,7 @@
       </button>
             <span>Dashboar Angular</span>
             <span class="example-spacer"></span>
-            <button (click)="logout()" mat-raised-button class="outline" routerLink="login"><mat-icon>power_settings_new</mat-icon> Cerrar Sesión</button>
+            <button (click)="logout()" mat-raised-button class="outline"><mat-icon>power_settings_new</mat-icon> Cerrar Sesión</button>
         </mat-toolbar>
         <ng-content></ng-content>
         <!-- Add Content Here -->
