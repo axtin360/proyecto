@@ -44,9 +44,8 @@ emailControl = new FormControl('',[Validators.required,Validators.email]);
         uid: resp.uid
       }
       this.firestoreService.createUser(newRegisterBD).then(resp =>{
-        console.log('id new user -->', resp);
+        this.router.navigate(["dashboard"]); 
       });
-      console.log('register ok?', resp);
     }).catch(error =>{
       console.log(error);
     })

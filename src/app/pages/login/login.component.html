@@ -1,11 +1,6 @@
 <div class="wrapper">
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-signin fadeInDown formContent shadow">
         <h1 class="h3 mb-3 fadeIn first">Ingrese al sitio</h1>
-        <!--<mat-form-field appearance="fill" class="fadeIn second mb-2">
-            <mat-label class="text-white">Usuario</mat-label>
-            <input class="text-white" [formControl]="usuarioControl" required matInput>
-            <mat-error>Ingrese Nombre Usuario</mat-error>
-        </mat-form-field>-->
         <mat-form-field appearance="fill">
             <mat-label class="text-white">Email</mat-label>
             <input type="email" required matInput formControlName="email">
@@ -24,16 +19,10 @@
         </button>
             <mat-error>Ingrese Contraseña</mat-error>
         </mat-form-field>
-        <div class="checkbox mb-3 fadeIn third ">
-            <div>
-                <mat-checkbox color="primary">Recuérdame</mat-checkbox>
-            </div>
+        <div class=" mb-3 fadeIn third ">
             <div>
                 <a routerLink="/registro" class="">
                             ¿No tienes cuenta?
-                </a>
-                <a routerLink="/dashboard" class="">
-                            ¿sidebar?
                 </a>
             </div>
         </div>

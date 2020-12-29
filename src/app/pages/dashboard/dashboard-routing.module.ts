@@ -8,10 +8,10 @@ const routes: Routes = [
   {path:'', component: DashboardComponent, children:[
   {path:'', loadChildren: '../pokedex/pokedex.module#PokedexModule'},
   {path:'pokedex', loadChildren: '../pokedex/pokedex.module#PokedexModule'},
-  {path:'solucion', loadChildren: '../solucion/solucion.module#SolucionModule'},
-  {path:'division', loadChildren: '../division/division.module#DivisionModule'},
-  {path:'otramas', loadChildren: '../otramas/otramas.module#OtramasModule'},
-  {path:'descargas', loadChildren: '../descargas/descargas.module#DescargasModule'},
+  {path:'modulo_2', loadChildren: '../solucion/solucion.module#SolucionModule'},
+  {path:'modulo_4', loadChildren: '../division/division.module#DivisionModule'},
+  {path:'modulo_3', loadChildren: '../otramas/otramas.module#OtramasModule'},
+  {path:'modulo_5', loadChildren: '../descargas/descargas.module#DescargasModule'},
 ]},
 
 

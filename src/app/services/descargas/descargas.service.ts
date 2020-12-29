@@ -38,10 +38,6 @@ export class DescargasService {
            img: "assets/img/7-zip.png",
          },
          {
-           url: "assets/doc/Bicicletas.doc",
-           img: "assets/img/oracle.jpg",
-         },
-         {
            url: "assets/doc/Teams_windows_x64.exe",
            img: "assets/img/teams.png",
          }

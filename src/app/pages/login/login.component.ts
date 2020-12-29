@@ -17,7 +17,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 
 export class LoginComponent implements OnInit {
-  private logged: boolean;
+  recuerdame: boolean = true;
   hide : boolean = true;
   passControl= new FormControl('',Validators.required);
   emailControl = new FormControl('',[Validators.required,Validators.email,]);
@@ -36,19 +36,13 @@ export class LoginComponent implements OnInit {
    
    }
   
-
   onLogin(){
     console.log('submit form', this.loginForm.value);
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.pass).then(resp => {
-      //console.log('resp promise campo ts -->', resp);
-      
+      //console.log('resp promise campo ts -->', resp);      
       this.router.navigate(["dashboard"]);
     }).catch(error => {
       console.error('promise -->', error);
     });
-  }
-
-  refresh(){
-    window.location.reload();
   }
 }

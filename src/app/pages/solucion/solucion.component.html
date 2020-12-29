@@ -1,4 +1,5 @@
 <div class="main-content animated fadeIn fast">
+    <!--
     <div class="row">
         <div class="col-12">
             <div class="card shadow">
@@ -30,5 +31,35 @@
                 </div>
             </div>
         </div>
+    </div>-->
+    <div class="row">
+        <div *ngFor="let pokemon of pokemons" class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats shadow-sm">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon h4">
+                        {{pokemon.id}}
+                    </div>
+                    <p class="card-category">{{pokemon.name | uppercase}}</p>
+                    <h6 class="card-title">
+                        {{pokemon.types[0].type.name }}
+                    </h6>
+                    <div class="text-center">
+                        <img [src]="pokemon.sprites.front_default" alt="Pokemon" width="150px">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">height</i><strong> Height:</strong> {{pokemon.height}}
+                    </div>
+                    <div class="stats">
+                        <i class="material-icons">fitness_center</i><strong> Weight:</strong> {{pokemon.weight}}
+                    </div>
+                    <div class="stats">
+                        <i class="material-icons">catching_pokemon</i><strong>Abilities</strong> {{pokemon.abilities[0].ability.name}} , {{pokemon.abilities[1].ability.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

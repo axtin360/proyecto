@@ -9,7 +9,7 @@ export class PokeService {
   constructor(private http: HttpClient) { }
 
  getPokemon() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=151`);
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=12&offset=151`);
     
     }
 
