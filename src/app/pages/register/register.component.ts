@@ -4,13 +4,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { RegisterService } from '../../services/firebase/register.service';
 import { FirestoreService } from '../../services/firebase/firestore.service'; 
 import { User } from 'src/app/interfaces/user';
+import { Router } from '@angular/router';
 
-/*export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}*/
 
 @Component({
   selector: 'app-register',
@@ -33,7 +28,8 @@ emailControl = new FormControl('',[Validators.required,Validators.email]);
     })
   constructor(
     private firestoreService: FirestoreService,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private router : Router
    ) { }
 
   ngOnInit() {
@@ -55,5 +51,6 @@ emailControl = new FormControl('',[Validators.required,Validators.email]);
       console.log(error);
     })
   }
+
 
 }

@@ -8,10 +8,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
+
 /* form */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /* servicios*/
+import { HttpClientModule } from '@angular/common/http';
+
 
 /** firebase **/
 import {AngularFireModule} from '@angular/fire';
@@ -27,7 +30,7 @@ import { LoggedGuard } from './guards/logged.guard';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
   ],
   imports: [
     FormsModule,
@@ -39,7 +42,8 @@ import { LoggedGuard } from './guards/logged.guard';
     AngularFireAuthModule,
     LayoutModule,
     AngularFirestoreModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [LoggedGuard],
   bootstrap: [AppComponent]

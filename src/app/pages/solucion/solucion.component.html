@@ -1,14 +1,34 @@
 <div class="main-content animated fadeIn fast">
-    <div class="card shadow">
-        <div class="card-header card-bg-warning shadow">
-            <h5>Color warning</h5>
-            <p class="card-category"> Subtítulos para lo q sea </p>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">aca puede ser </h5>
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header card-bg-warning shadow">
+                    <h5>Color warning</h5>
+                    <p class="card-category"> Subtítulos para lo q sea </p>
+                </div>
+                <div class="card-body">
 
-            <p class="card-text">esto puede ser un texto </p>
-            <button mat-raised-button class="btn-warning">Warn</button>
+                    <table class="table">
+                        <tr>
+                            <th>N°</th>
+                            <th>Imagen</th>
+                            <th>Imagen shiny</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                        </tr>
+                        <tr *ngFor="let pokemon of pokemons">
+                            <td>{{pokemon.id}}</td>
+                            <td><img [src]="pokemon.sprites.front_default" alt="Pokemon"><img [src]="pokemon.sprites.back_default" alt="Pokemon"></td>
+                            <td><img [src]="pokemon.sprites.front_shiny" alt="Pokemon"><img [src]="pokemon.sprites.back_shiny" alt="Pokemon"></td>
+                            <td>{{pokemon.name}}</td>
+                            <td>{{pokemon.types[0].type.name }}
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

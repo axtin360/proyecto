@@ -22,14 +22,13 @@
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-            <mat-error *ngIf="pass.errors.minlength">Ingrese Contraseña con mas de 6 carácteres</mat-error>
             <mat-error>Ingrese Contraseña</mat-error>
 
         </mat-form-field>
         <div class="mb-3 mt-2 fadeIn third">
             <button mat-raised-button color="primary" type="submit" class="btn mr-5 fadeIn fourth" routerLink='/login'>Volver</button>
 
-            <button mat-raised-button color="primary" type="submit" class="btn ml-5 pull-right fadeIn fourth" [disabled]="">Crear</button>
+            <button mat-raised-button color="primary" type="submit" class="btn ml-5 pull-right fadeIn fourth" [disabled]="registerForm.invalid">Crear</button>
 
         </div>
 

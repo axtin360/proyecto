@@ -11,7 +11,7 @@ export class RegisterService {
 
   async registerByUserEmail(email:string, pass:string){
     try {
-          const respRegister = await this.angularFireAuth.auth.createUserWithEmailAndPassword(email, pass)
+          const respRegister = await this.angularFireAuth.auth.createUserWithEmailAndPassword(email, pass);
           return respRegister.user;
     } catch (error) {
       console.error('error register', error);

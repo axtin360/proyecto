@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { VidaComponent } from './vida.component';
+import { PokedexComponent } from './pokedex.component';
 
 
 const routes: Routes = [
-  {path:'', component: VidaComponent}
+  {path:'', component: PokedexComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class VidaRoutingModule { }
+export class PokedexRoutingModule { }
